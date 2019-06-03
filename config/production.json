@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://chialin:chialin@marscluster-9owav.mongodb.net/test?retryWrites=true",
+  "jwtSecret": "mySecretToken"
+}
