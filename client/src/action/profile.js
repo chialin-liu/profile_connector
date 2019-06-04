@@ -11,7 +11,7 @@ import axios from "axios";
 
 export const getCurrentProfile = () => async dispatch => {
   try {
-    const res = await axios.get("http://localhost:3800/api/profile/me");
+    const res = await axios.get("/api/profile/me");
     dispatch({
       type: GET_PROFILE,
       payload: res.data
@@ -33,7 +33,7 @@ export const getProfiles = () => async dispatch => {
   });
   try {
     console.log("begin to get all profiles");
-    const res = await axios.get("http://localhost:3800/api/profile/");
+    const res = await axios.get("/api/profile/");
     console.log("finished api get all profiles");
     dispatch({
       type: GET_PROFILES,
@@ -53,7 +53,7 @@ export const getProfiles = () => async dispatch => {
 export const getProfileById = userId => async dispatch => {
   try {
     console.log("begin to get profile by user id");
-    const res = await axios.get(`http://localhost:3800/api/profile/${userId}`);
+    const res = await axios.get(`/api/profile/${userId}`);
     dispatch({
       type: GET_PROFILE,
       payload: res.data
@@ -78,11 +78,7 @@ export const addExperience = (formData, history) => async dispatch => {
   };
   try {
     console.log("Ready to post profile");
-    const res = await axios.put(
-      "http://localhost:3800/api/profile/experience",
-      formData,
-      config
-    );
+    const res = await axios.put("/api/profile/experience", formData, config);
     console.log("UPDATE PROFILE OK");
     dispatch({
       type: UPDATE_PROFILE,
@@ -115,11 +111,7 @@ export const createProfile = (
   };
   try {
     console.log("Ready to post profile");
-    const res = await axios.post(
-      "http://localhost:3800/api/profile",
-      formData,
-      config
-    );
+    const res = await axios.post("/api/profile", formData, config);
     console.log("POST PROFILE OK");
     dispatch({
       type: GET_PROFILE,
@@ -148,11 +140,7 @@ export const addEducation = (formData, history) => async dispatch => {
   };
   try {
     console.log("Ready to post profile");
-    const res = await axios.put(
-      "http://localhost:3800/api/profile/education",
-      formData,
-      config
-    );
+    const res = await axios.put("/api/profile/education", formData, config);
     console.log("UPDATE PROFILE OK");
     dispatch({
       type: UPDATE_PROFILE,
@@ -178,9 +166,7 @@ export const deleteExperience = id => async dispatch => {
 
   try {
     console.log("EXPEREINCE begin to delete");
-    const res = await axios.delete(
-      `http://localhost:3800/api/profile/experience/${id}`
-    );
+    const res = await axios.delete(`/api/profile/experience/${id}`);
     dispatch({
       type: UPDATE_PROFILE,
       payload: res.data
@@ -198,9 +184,7 @@ export const deleteExperience = id => async dispatch => {
 };
 export const deleteEducation = id => async dispatch => {
   try {
-    const res = await axios.delete(
-      `http://localhost:3800/api/profile/education/${id}`
-    );
+    const res = await axios.delete(`/api/profile/education/${id}`);
     dispatch({
       type: UPDATE_PROFILE,
       payload: res.data
@@ -219,7 +203,7 @@ export const deleteEducation = id => async dispatch => {
 export const deleteAccount = () => async dispatch => {
   if (window.confirm("Are you sure to delete?")) {
     try {
-      await axios.delete("http://localhost:3800/api/profile");
+      await axios.delete("/api/profile");
       dispatch({
         type: CLEAR_PROFILE
       });
