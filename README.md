@@ -6,4 +6,8 @@ build an app for every designers to edit their profiles
 3. If users desire to login to create their own profile, they are required to register email.
 4. Users can also post their ideas and small talks on the post board
 
-
+-----
+new features will be developed soon
+1. login with Google and Facebook
+2. If users forget their passwords, they can set their passwords through google email verification
+3. Users can upload images on the post and profiles
