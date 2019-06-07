@@ -1,5 +1,6 @@
-# profile_connector
-build an app for every designers to edit their profiles
+This application was deployed on the heroku.
+
+https://profile-connection.herokuapp.com/
 
 1. This web is built using React/Redux and NodeJS.
 2. Users can view the profiles without registering and logging.
