@@ -1,5 +1,5 @@
 This application was deployed on the heroku.
-
+![image](https://github.com/chialin-liu/profile_connector/blob/master/developer_connector.png)
 https://profile-connection.herokuapp.com/
 
 1. This web is built using React/Redux and NodeJS.
